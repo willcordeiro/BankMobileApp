@@ -6,6 +6,13 @@ import NumberPad from '../components/NumberPad';
 export default PinScreen = ({navigation}) => {
   const [pinCount, setPinCount] = useState(0);
   const totalPins = 6;
+
+  useEffect(() => {
+    if (pinCount === totalPins) {
+      navigation.navigate('Home');
+    }
+  }, [pinCount]);
+
   const renderPins = () => {
     const pins = [];
 

@@ -1,8 +1,7 @@
-import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-export default HomeScreen = () => {
+export default CardScreen = () => {
   return <View style={styles.container}></View>;
 };
 
