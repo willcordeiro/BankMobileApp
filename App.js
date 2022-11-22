@@ -1,7 +1,6 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import TouchScreen from './src/screens/TouchScreen';
 import PinScreen from './src/screens/PinScreen';
@@ -43,6 +42,7 @@ export default App = () => {
       borderTopColor: '#1e1e1e',
       paddingBottom: 5,
     },
+    headerShown: false,
   });
 
   const TabStackScreens = () => {
@@ -53,8 +53,12 @@ export default App = () => {
         <TabStack.Screen name="Home" component={HomeScreen}></TabStack.Screen>
         <TabStack.Screen
           name="SendRequest"
-          component={SendRequestScreen}></TabStack.Screen>
-        <TabStack.Screen name="Cards" component={CardScreen}></TabStack.Screen>
+          component={SendRequestScreen}
+          options={{title: 'Send & Request'}}></TabStack.Screen>
+        <TabStack.Screen
+          name="Cards"
+          component={CardScreen}
+          options={{title: 'My Cards'}}></TabStack.Screen>
       </TabStack.Navigator>
     );
   };
