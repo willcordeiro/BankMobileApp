@@ -8,19 +8,16 @@ import HomeScreen from './src/screens/HomeScreen';
 import SendRequestScreen from './src/screens/SendRequestScreen';
 import CardScreen from './src/screens/CardScreen';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default App = () => {
   const Stack = createStackNavigator();
   const TabStack = createBottomTabNavigator();
 
-  const tabBarOptions = {
-    showLabel: true,
-  };
-
   const screenOptions = ({route}) => ({
     tabBarIcon: ({focused}) => {
       let icon = '';
-      const color = focused ? '#559ddf' : '#828282';
+      const color = 'white';
       const size = 24;
 
       switch (route.name) {
@@ -29,36 +26,48 @@ export default App = () => {
           break;
 
         case 'SendRequest':
-          icon = 'send';
+          icon = 'bank-transfer';
           break;
 
         default:
-          icon = 'dashboard';
+          icon = 'home-minus';
       }
-      return <Icon name={icon} size={size} color={color} />;
+      return (
+        <Icon2
+          name={icon}
+          size={size}
+          color={color}
+          style={{
+            fontWeight: 'bold',
+            backgroundColor: focused ? '#8a43f2' : '',
+            borderRadius: 15,
+          }}
+        />
+      );
     },
     tabBarStyle: {
       backgroundColor: '#1e1e1e',
       borderTopColor: '#1e1e1e',
-      paddingBottom: 5,
+      paddingTop: 10,
     },
     headerShown: false,
   });
 
   const TabStackScreens = () => {
     return (
-      <TabStack.Navigator
-        tabBarOptions={tabBarOptions}
-        screenOptions={screenOptions}>
-        <TabStack.Screen name="Home" component={HomeScreen}></TabStack.Screen>
+      <TabStack.Navigator screenOptions={screenOptions}>
+        <TabStack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{title: ''}}></TabStack.Screen>
         <TabStack.Screen
           name="SendRequest"
           component={SendRequestScreen}
-          options={{title: 'Send & Request'}}></TabStack.Screen>
+          options={{title: ''}}></TabStack.Screen>
         <TabStack.Screen
           name="Cards"
           component={CardScreen}
-          options={{title: 'My Cards'}}></TabStack.Screen>
+          options={{title: ''}}></TabStack.Screen>
       </TabStack.Navigator>
     );
   };
