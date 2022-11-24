@@ -7,7 +7,6 @@ import PinScreen from './src/screens/PinScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import SendRequestScreen from './src/screens/SendRequestScreen';
 import CardScreen from './src/screens/CardScreen';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default App = () => {
@@ -59,15 +58,18 @@ export default App = () => {
         <TabStack.Screen
           name="Home"
           component={HomeScreen}
-          options={{title: ''}}></TabStack.Screen>
+          options={{title: ''}}
+        />
         <TabStack.Screen
           name="SendRequest"
           component={SendRequestScreen}
-          options={{title: ''}}></TabStack.Screen>
+          options={{title: ''}}
+        />
         <TabStack.Screen
           name="Cards"
           component={CardScreen}
-          options={{title: ''}}></TabStack.Screen>
+          options={{title: ''}}
+        />
       </TabStack.Navigator>
     );
   };

@@ -1,8 +1,18 @@
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default SendRequestScreen = () => {
-  return <View style={styles.container}></View>;
+  return (
+    <SafeAreaView style={styles.container}>
+      <View></View>
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
