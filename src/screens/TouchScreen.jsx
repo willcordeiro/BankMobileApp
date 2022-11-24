@@ -9,7 +9,7 @@ export default TouchScreen = ({navigation}) => {
 
       <TouchableOpacity
         style={styles.touch}
-        onLongPress={() => navigation.navigate('Tabs')}
+        onPress={() => navigation.navigate('Tabs')}
         delayPressIn={0}>
         <View style={styles.circle}>
           <View style={styles.outterCircle}>

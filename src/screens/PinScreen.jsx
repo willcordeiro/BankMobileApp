@@ -30,11 +30,10 @@ export default PinScreen = ({navigation}) => {
     return pins;
   };
 
-  const pressKey = index => {
+  const pressKey = (item, index) => {
     setPinCount(prev => {
-      return index != 10 ? prev + 1 : prev - 1;
+      return item !== 'X' ? prev + 1 : prev - 1;
     });
-    console.log(index);
   };
 
   return (
@@ -53,7 +52,7 @@ export default PinScreen = ({navigation}) => {
         <Text style={styles.useTouchTitle}>Use Touch ID</Text>
       </TouchableOpacity>
 
-      <NumberPad onPress={() => pressKey()} />
+      <NumberPad onPress={pressKey} />
     </View>
   );
 };

@@ -31,6 +31,7 @@ export default HomeScreen = () => {
           }>
           {item.signal}
         </Text>
+
         {item.price}
       </Text>
     </View>
@@ -214,12 +215,12 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   purchaseTextPlus: {
-    color: 'green',
-    fontSize: 10,
+    color: '#b8ff46',
+    fontSize: 15,
   },
   purchaseTextLess: {
-    color: 'red',
-    fontSize: 10,
+    color: '#a50121',
+    fontSize: 15,
   },
   purchaseTextSmall: {
     color: 'grey',

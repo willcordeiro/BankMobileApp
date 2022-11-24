@@ -79,9 +79,9 @@ export default App = () => {
         screenOptions={{
           headerShown: false,
         }}>
-        <Stack.Screen name="Tabs" component={TabStackScreens} />
         <Stack.Screen name="Touch" component={TouchScreen} />
         <Stack.Screen name="Pin" component={PinScreen} />
+        <Stack.Screen name="Tabs" component={TabStackScreens} />
       </Stack.Navigator>
     </NavigationContainer>
   );

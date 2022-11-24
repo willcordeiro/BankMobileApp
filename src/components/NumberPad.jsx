@@ -1,20 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default NumberPad = ({onPress}) => {
-  const buttons = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    <Icon name="keyboard-backspace" size={24} />,
-  ];
+  const buttons = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'X'];
   return (
     <View style={styles.container}>
       {buttons.map((item, index) => {
@@ -22,7 +10,9 @@ export default NumberPad = ({onPress}) => {
           <TouchableOpacity
             key={index}
             style={styles.Number}
-            onPress={() => onPress(item, index)}
+            onPress={() => {
+              onPress(item, index);
+            }}
             delayPressIn={0}>
             <Text style={styles.text}>{item}</Text>
           </TouchableOpacity>
